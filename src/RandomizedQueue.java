@@ -46,9 +46,9 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         int numberEl = StdRandom.uniform(0, size);
         //System.out.println("  -" + numberEl + "-  ");
         Item buffEl = randQueue[numberEl];
-        if (size + 5 < maxSize/4) {
+        if (size > 0 && size == maxSize/4) {
             Item[] bufferQueue = randQueue;
-            maxSize = maxSize / 2;
+            maxSize = maxSize/2;
             randQueue = (Item[]) new Object[maxSize];
             for (int i = 0; i < size; ++i) {
                 randQueue[i] = bufferQueue[i];
